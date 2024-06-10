@@ -36,70 +36,56 @@ function NavbarComponent() {
         <div className="navbar-nav mx-auto py-0">
           <Link
             to="/"
-            className={`nav-item nav-link p-4 ${
-              styles.navItem
-            } text-decoration-none ${
-              activeNavLink === "/" ? styles.active : ""
-            }`}
+            className={`nav-item nav-link p-4 ${styles.navItem
+              } text-decoration-none ${activeNavLink === "/" ? styles.active : ""
+              }`}
           >
             Home
           </Link>
           <Link
             to="/about"
-            className={`nav-item nav-link p-4 ${
-              styles.navItem
-            } text-decoration-none ${
-              activeNavLink === "/about" ? styles.active : ""
-            }`}
+            className={`nav-item nav-link p-4 ${styles.navItem
+              } text-decoration-none ${activeNavLink === "/about" ? styles.active : ""
+              }`}
           >
             About
           </Link>
           <Link
             to="/service"
-            className={`nav-item nav-link p-4 ${
-              styles.navItem
-            } text-decoration-none ${
-              activeNavLink === "/service" ? styles.active : ""
-            }`}
+            className={`nav-item nav-link p-4 ${styles.navItem
+              } text-decoration-none ${activeNavLink === "/service" ? styles.active : ""
+              }`}
           >
             Service
           </Link>
           <Link
             to="/product"
-            className={`nav-item nav-link p-4 ${
-              styles.navItem
-            } text-decoration-none ${
-              activeNavLink === "/product" ? styles.active : ""
-            }`}
+            className={`nav-item nav-link p-4 ${styles.navItem
+              } text-decoration-none ${activeNavLink === "/product" ? styles.active : ""
+              }`}
           >
             Product
           </Link>
           <Link
             to="/contact"
-            className={`nav-item nav-link p-4 ${
-              styles.navItem
-            } text-decoration-none ${
-              activeNavLink === "/contact" ? styles.active : ""
-            }`}
+            className={`nav-item nav-link p-4 ${styles.navItem
+              } text-decoration-none ${activeNavLink === "/contact" ? styles.active : ""
+              }`}
           >
             Contact
           </Link>
           <Link
             to="/login"
-            className={`nav-item nav-link p-4 ${
-              styles.navItem
-            } text-decoration-none ${
-              activeNavLink === "/login" ? styles.active : ""
-            }`}
+            className={`nav-item nav-link p-4 ${styles.navItem
+              } text-decoration-none ${activeNavLink === "/login" ? styles.active : ""
+              }`}
           >
             <div className="d-flex justify-content-space-between">
               <i className="fa-solid fa-user me-2"></i>
               Login
             </div>
           </Link>
-          <div className={`ms-2 ${styles.navItem} d-flex align-items-center`}>
-            <LanguageDropdown />
-          </div>
+
         </div>
       </div>
     </nav>

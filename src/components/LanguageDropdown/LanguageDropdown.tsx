@@ -1,20 +1,14 @@
 import Select from "react-select";
-import { useTranslation } from "react-i18next";
 
 const LanguageDropdown = () => {
-  const { t, i18n } = useTranslation();
 
   const languageOptions = [
     { label: "English", value: "en" },
     { label: "French", value: "fr" },
   ];
-
-  const currentLanguage = i18n.language;
-
   const handleChange = (selectedOption: any) => {
-    console.log(selectedOption,"asafsaf")
-    console.log(currentLanguage,"asafsaf")
-    i18n.changeLanguage(selectedOption.value);
+    console.log(selectedOption, "asafsaf")
+
   };
 
   return (

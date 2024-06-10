@@ -183,13 +183,13 @@ const SignUpForm = () => {
           <div className="d-flex flex-row justify-content-space-between">
             <button
               onClick={() => handleTabChange("customer")}
-              className={formState.activeTab === "customer" ? "active" : ""}
+              className={formState.activeTab === "customer" ? styles.active : ""}
             >
               For Customer
             </button>
             <button
               onClick={() => handleTabChange("farmer")}
-              className={formState.activeTab === "farmer" ? "active" : ""}
+              className={formState.activeTab === "farmer" ? styles.active : ""}
             >
               For Farmer
             </button>
