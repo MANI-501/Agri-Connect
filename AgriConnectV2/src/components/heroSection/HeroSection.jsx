@@ -1,7 +1,9 @@
+import AppCarousel from "../AppCourosel/AppCourosel";
+
 const HeroSection = () => {
     return (
-        <div>
-           <img className=" h-44 lg:h-full" src="../img/hero1.png" alt="" />
+        <div className="mt-4">
+            <AppCarousel />
         </div>
     );
 }

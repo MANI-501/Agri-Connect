@@ -1,0 +1,31 @@
+.heading{
+    font: normal 700 80px/1 'Roboto', sans-serif;
+}
+.exploreBtn {
+    background-color: #f93;
+    border: 1px solid #f93;
+    font: normal 700 16px/1 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.exploreBtn:hover {
+    background-color: #f93 !important;
+    border: 1px solid #f93 !important;
+    font: normal 700 16px/1 'Roboto', sans-serif;
+}
+
+.contactBtn {
+    background-color: #34ad54;
+    border: 1px solid #34ad54;
+    font: normal 700 16px/1 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.contactBtn:hover {
+    background-color: #34ad54 !important;
+    border: 1px solid #34ad54 !important;
+    font: normal 700 16px/1 'Roboto', sans-serif;
+}
+.subText{
+    font: normal 700 28px/1 'Roboto', sans-serif;
+}

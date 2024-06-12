@@ -1,96 +1,97 @@
 import { Link } from "react-router-dom";
+import { Button, IconButton } from "@material-tailwind/react";
+import { FaTwitter, FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <div>
-            {/* footer  */}
-            <footer className="text-gray-600 body-font bg-pink-600">
-                {/* main  */}
-                <div className="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col">
-                    {/* logo  */}
-                    <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
-                        <span className="text-xl font-bold">E-bharat</span>
-                    </a>
-                    {/* para  */}
-                    <p className="text-sm text-gray-100 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-                        © 2024 ebharat —
-                        <Link
-                        to={'/'}
-                            className="text-gray-100 ml-1"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                        >
-                            @ebharat
-                        </Link>
-                    </p>
-                    
-                    {/* media icon  */}
-                    <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                        {/* facebook  */}
-                        <a className="text-gray-100 cursor-pointer">
-                            <svg
-                                fill="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                className="w-5 h-5"
-                                viewBox="0 0 24 24"
-                            >
-                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                            </svg>
-                        </a>
-
-                        {/* twitter  */}
-                        <a className="ml-3 text-gray-100 cursor-pointer">
-                            <svg
-                                fill="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                className="w-5 h-5"
-                                viewBox="0 0 24 24"
-                            >
-                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                            </svg>
-                        </a>
-
-                        {/* instagram  */}
-                        <a className="ml-3 text-gray-100 cursor-pointer">
-                            <svg
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                className="w-5 h-5"
-                                viewBox="0 0 24 24"
-                            >
-                                <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
-                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
-                            </svg>
-                        </a>
-
-                        {/* linkedIn  */}
-                        <a className="ml-3 text-gray-100 cursor-pointer">
-                            <svg
-                                fill="currentColor"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={0}
-                                className="w-5 h-5"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke="none"
-                                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                                />
-                                <circle cx={4} cy={4} r={2} stroke="none" />
-                            </svg>
-                        </a>
-                    </span>
+            <div className="container-fluid bg-footer bg-black text-white mt-5">
+                <div className="container">
+                    <div className="row gx-5">
+                        <div className="col-lg-8 col-md-6">
+                            <div className="row gx-5">
+                                <div className="col-lg-4 col-md-12 pt-5 mb-5">
+                                    <h4 className="text-white mb-4">Get In Touch</h4>
+                                    <div className="d-flex mb-2">
+                                        <i className="bi bi-geo-alt text-white me-2"></i>
+                                        <p className="text-white mb-0">11 rue curial,  Paris,  France</p>
+                                    </div>
+                                    <div className="d-flex mb-2">
+                                        <i className="bi bi-envelope-open text-white me-2"></i>
+                                        <p className="text-white mb-0">ParisAgriconnect@gmail.com</p>
+                                    </div>
+                                    <div className="d-flex mb-2">
+                                        <i className="bi bi-telephone text-white me-2"></i>
+                                        <p className="text-white mb-0">+33 7825081090</p>
+                                    </div>
+                                    <div className="d-flex mt-4">
+                                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                                            <IconButton className="bg-blue-500 text-white rounded-full me-2">
+                                                <FaTwitter size={20} />
+                                            </IconButton>
+                                        </a>
+                                        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+                                            <IconButton className="bg-blue-600 text-white rounded-full me-2">
+                                                <FaFacebookF size={20} />
+                                            </IconButton>
+                                        </a>
+                                        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                                            <IconButton className="bg-blue-700 text-white rounded-full me-2">
+                                                <FaLinkedinIn size={20} />
+                                            </IconButton>
+                                        </a>
+                                        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
+                                            <IconButton className="bg-red-600 text-white rounded-full me-2">
+                                                <FaYoutube size={20} />
+                                            </IconButton>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                                    <h4 className="text-white mb-4">Quick Links</h4>
+                                    <div className="d-flex flex-column justify-content-start">
+                                        <Link to="/" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Home</Link>
+                                        <Link to="/about" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>About Us</Link>
+                                        <Link to="/services" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Our Services</Link>
+                                        <Link to="/team" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Meet The Team</Link>
+                                        <Link to="/blog" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Latest Blog</Link>
+                                        <Link to="/contact" className="text-white"><i className="bi bi-arrow-right text-white me-2"></i>Contact Us</Link>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                                    <h4 className="text-white mb-4">Popular Links</h4>
+                                    <div className="d-flex flex-column justify-content-start">
+                                        <Link to="/" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Home</Link>
+                                        <Link to="/about" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>About Us</Link>
+                                        <Link to="/services" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Our Services</Link>
+                                        <Link to="/team" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Meet The Team</Link>
+                                        <Link to="/blog" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Latest Blog</Link>
+                                        <Link to="/contact" className="text-white"><i className="bi bi-arrow-right text-white me-2"></i>Contact Us</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6 mt-lg-n5">
+                            <div className="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-secondary p-5">
+                                <h4 className="text-white">Newsletter</h4>
+                                <h6 className="text-white">Subscribe Our Newsletter</h6>
+                                <p>Join us in promoting healthy, sustainable living for a better tomorrow!</p>
+                                <form action="">
+                                    <div className="input-group mt-2">
+                                        <input type="text" className="form-control border-white p-3" placeholder="Your Email" />
+                                        <button className="btn btn-primary">Sign Up</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </footer>
+            </div>
+            <div className="container-fluid bg-dark text-white py-4">
+                <div className="container text-center">
+                    <p className="mb-0">&copy; <a className="text-secondary fw-bold" href="https://x.com/">AgriConnect</a>. All Rights Reserved. Designed by <a className="text-secondary fw-bold" href="#">AgriConnect Team</a></p>
+                </div>
+            </div>
         </div>
     );
 }

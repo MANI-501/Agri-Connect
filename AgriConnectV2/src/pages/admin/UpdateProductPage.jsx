@@ -103,7 +103,7 @@ const UpdateProductPage = () => {
     }, []);
     return (
         <div>
-            <div className='flex justify-center items-center h-screen'>
+            <div className='flex justify-center items-center' style={{ minHeight: "600px"}}>
                 {loading && <Loader />}
                 {/* Login Form  */}
                 <div className="login_Form bg-pink-50 px-8 py-6 border border-pink-100 rounded-xl shadow-md">
