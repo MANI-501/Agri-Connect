@@ -27,6 +27,17 @@ const Navbar = () => {
                 <Link to={'/'} className="navItem ms-3">Home</Link>
             </li>
 
+            {/* About */}
+            <li>
+                <Link to={'/about'} className="navItem ms-3">About</Link>
+            </li>
+
+            {/* Services */}
+            <li>
+                <Link to={'/services'} className="navItem ms-3">Services</Link>
+            </li>
+
+
             {/* All Product */}
             <li>
                 <Link to={'/allproduct'} className="navItem ms-3">All Product</Link>
@@ -61,6 +72,13 @@ const Navbar = () => {
             <li>
                 <Link to={'/cart'} className="navItem ms-3">
                     Cart({cartItems.length})
+                </Link>
+            </li>
+
+            {/* Cart */}
+            <li>
+                <Link to={'/contact'} className="navItem ms-3">
+                    Contact Us
                 </Link>
             </li>
         </ul>

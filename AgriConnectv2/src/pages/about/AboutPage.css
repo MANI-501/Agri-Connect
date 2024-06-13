@@ -1,0 +1,36 @@
+.bg-hero {
+  background: url(../../assets/img/carousel-1.jpg) top right no-repeat;
+  background-size: cover;
+}
+.exploreBtn {
+  background-color: #f93;
+  border: 1px solid #f93;
+  font: normal 700 16px/1 "Roboto", sans-serif;
+  color: #fff;
+}
+
+.exploreBtn:hover {
+  background-color: #f93 !important;
+  border: 1px solid #f93 !important;
+  font: normal 700 16px/1 "Roboto", sans-serif;
+}
+
+.aboutText {
+  font: normal 700 28px/1 "Roboto", sans-serif;
+  color: #34ad54;
+}
+.greenBorder{
+    border: 3px solid #34ad54;
+}
+.contactBtn {
+  background-color: #34ad54;
+  border: 1px solid #34ad54;
+  font: normal 700 16px/1 "Roboto", sans-serif;
+  color: #fff;
+}
+
+.contactBtn:hover {
+  background-color: #34ad54 !important;
+  border: 1px solid #34ad54 !important;
+  font: normal 700 16px/1 "Roboto", sans-serif;
+}
