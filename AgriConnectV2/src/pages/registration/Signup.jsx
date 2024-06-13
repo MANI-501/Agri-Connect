@@ -8,6 +8,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import toast from "react-hot-toast";
 import Loader from "../../components/loader/Loader";
 import Layout from "../../components/layout/Layout";
+import emailjs from "emailjs-com";
 
 const Signup = () => {
     const context = useContext(myContext);
@@ -21,8 +22,21 @@ const Signup = () => {
         name: "",
         email: "",
         password: "",
-        role: "user"
+        role: "customer",
+        identificationNumber: "",
+        address: "",
+        mobileNumber: "",
+        products: ""
     });
+
+    // Active Tab State
+    const [activeTab, setActiveTab] = useState("customer");
+
+    // Handle Tab Click
+    const handleTabClick = (role) => {
+        setActiveTab(role);
+        setUserSignup({ ...userSignup, role });
+    };
 
     /**========================================================================
      *                          User Signup Function 
@@ -31,7 +45,19 @@ const Signup = () => {
     const userSignupFunction = async () => {
         // validation 
         if (userSignup.name === "" || userSignup.email === "" || userSignup.password === "") {
-            toast.error("All Fields are required")
+            toast.error("All Fields are required");
+            return;
+        }
+        if (activeTab === "farmer") {
+            if (
+                userSignup.identificationNumber === "" ||
+                userSignup.address === "" ||
+                userSignup.mobileNumber === "" ||
+                userSignup.products === ""
+            ) {
+                toast.error("All Fields are required for Farmer");
+                return;
+            }
         }
 
         setLoading(true);
@@ -52,33 +78,70 @@ const Signup = () => {
                         day: "2-digit",
                         year: "numeric",
                     }
-                )
-            }
+                ),
+                identificationNumber: userSignup.identificationNumber,
+                address: userSignup.address,
+                mobileNumber: userSignup.mobileNumber,
+                products: userSignup.products
+            };
 
             // create user Refrence
-            const userRefrence = collection(fireDB, "user")
+            const userRefrence = collection(fireDB, "user");
 
             // Add User Detail
-            addDoc(userRefrence, user);
+            await addDoc(userRefrence, user);
+
+            // Send Welcome Email
+            sendWelcomeEmail(userSignup.email, userSignup.name,userSignup.role);
 
             setUserSignup({
                 name: "",
                 email: "",
-                password: ""
-            })
+                password: "",
+                role: "customer",
+                identificationNumber: "",
+                address: "",
+                mobileNumber: "",
+                products: ""
+            });
 
             toast.success("Signup Successfully");
 
             setLoading(false);
-            navigate('/login')
+            navigate('/login');
         } catch (error) {
             console.log(error);
             setLoading(false);
         }
-    }
+    };
+
+    /**========================================================================
+     *                        Send Welcome Email Function 
+    *========================================================================**/
+
+    const sendWelcomeEmail = (email, name, role) => {
+        const roleMessage = role === "customer" 
+            ? "Welcome to our platform! You have successfully signed up as a customer." 
+            : role === "farmer" 
+                ? "Welcome to our platform! You have successfully signed up as a farmer."
+                : "Welcome to our platform! You have successfully signed up as an admin.";
+
+        const templateParams = {
+            to_email: email,
+            to_name: name,
+            message: roleMessage
+        };
+        emailjs.send('service_8tkwse5', 'template_7803k3h', templateParams, 'NTXQlWWBFRnbGMLmD')
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            }, (error) => {
+                console.log('FAILED...', error);
+            });
+    };
+
     return (
         <Layout>
-            <div className='flex justify-center items-center' style={{ minHeight: "600px"}}>
+            <div className='flex justify-center items-center' style={{ minHeight: "600px" }}>
                 {loading && <Loader />}
                 {/* Login Form  */}
                 <div className="login_Form bg-orange-50 px-8 py-6 border border-orange-100 rounded-xl shadow-md">
@@ -88,6 +151,28 @@ const Signup = () => {
                         <h2 className='text-center text-2xl font-bold text-orange-500 '>
                             Signup
                         </h2>
+                    </div>
+
+                    {/* Tabs  */}
+                    <div className="mb-5 flex justify-center">
+                        <button
+                            className={`px-4 py-2 mx-1 rounded ${activeTab === "customer" ? "bg-orange-500 text-white" : "bg-orange-200 text-orange-500"}`}
+                            onClick={() => handleTabClick("customer")}
+                        >
+                            Customer
+                        </button>
+                        <button
+                            className={`px-4 py-2 mx-1 rounded ${activeTab === "farmer" ? "bg-orange-500 text-white" : "bg-orange-200 text-orange-500"}`}
+                            onClick={() => handleTabClick("farmer")}
+                        >
+                            Farmer
+                        </button>
+                        <button
+                            className={`px-4 py-2 mx-1 rounded ${activeTab === "admin" ? "bg-orange-500 text-white" : "bg-orange-200 text-orange-500"}`}
+                            onClick={() => handleTabClick("admin")}
+                        >
+                            Admin
+                        </button>
                     </div>
 
                     {/* Input One  */}
@@ -100,7 +185,7 @@ const Signup = () => {
                                 setUserSignup({
                                     ...userSignup,
                                     name: e.target.value
-                                })
+                                });
                             }}
                             className='bg-orange-50 border border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-200'
                         />
@@ -116,7 +201,7 @@ const Signup = () => {
                                 setUserSignup({
                                     ...userSignup,
                                     email: e.target.value
-                                })
+                                });
                             }}
                             className='bg-orange-50 border border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-200'
                         />
@@ -132,11 +217,71 @@ const Signup = () => {
                                 setUserSignup({
                                     ...userSignup,
                                     password: e.target.value
-                                })
+                                });
                             }}
                             className='bg-orange-50 border border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-200'
                         />
                     </div>
+
+                    {activeTab === "farmer" && (
+                        <>
+                            <div className="mb-3">
+                                <input
+                                    type="text"
+                                    placeholder='Identification Number'
+                                    value={userSignup.identificationNumber}
+                                    onChange={(e) => {
+                                        setUserSignup({
+                                            ...userSignup,
+                                            identificationNumber: e.target.value
+                                        });
+                                    }}
+                                    className='bg-orange-50 border border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-200'
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <input
+                                    type="text"
+                                    placeholder='Address'
+                                    value={userSignup.address}
+                                    onChange={(e) => {
+                                        setUserSignup({
+                                            ...userSignup,
+                                            address: e.target.value
+                                        });
+                                    }}
+                                    className='bg-orange-50 border border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-200'
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <input
+                                    type="text"
+                                    placeholder='Mobile Number'
+                                    value={userSignup.mobileNumber}
+                                    onChange={(e) => {
+                                        setUserSignup({
+                                            ...userSignup,
+                                            mobileNumber: e.target.value
+                                        });
+                                    }}
+                                    className='bg-orange-50 border border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-200'
+                                />
+                            </div>
+                            <div className="mb-5">
+                                <textarea
+                                    placeholder='Products'
+                                    value={userSignup.products}
+                                    onChange={(e) => {
+                                        setUserSignup({
+                                            ...userSignup,
+                                            products: e.target.value
+                                        });
+                                    }}
+                                    className='bg-orange-50 border border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-200 h-24'
+                                />
+                            </div>
+                        </>
+                    )}
 
                     {/* Signup Button  */}
                     <div className="mb-5">
