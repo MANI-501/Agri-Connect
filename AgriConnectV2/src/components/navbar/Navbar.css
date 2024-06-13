@@ -1,0 +1,49 @@
+.header {
+  font: normal normal 700 50px/19px Roboto, sans-serif;
+  color: #f93;
+}
+.connectText {
+  font: normal normal 700 50px/19px Roboto, sans-serif;
+  color: #34ad54;
+}
+.head {
+  height: 100px;
+}
+.phoneIcon{
+    color: #34ad54;
+    font-size: 20px;
+}
+.phoneNo{
+   font: normal 700 32px/1 'Roboto', sans-serif;
+   color: #34ad54;
+}
+.header{
+   font: normal normal 700 50px/19px Roboto, sans-serif;
+   color: #f93;
+}
+.connectText{
+    font: normal normal 700 50px/19px Roboto, sans-serif;
+    color: #34ad54; 
+}
+.icon{
+    background-color: #34ad54; 
+    border: 1px solid #34ad54;
+}
+.phone{
+    width: 20%;
+}
+.agriHead{
+    width: 90%;
+}
+.headContainer{
+  height: 100px;
+}
+.navItem{
+  font: normal 600 16px "Open Sans", sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  height: 100px;
+}
+.navBarr{
+  height: 100px;
+}
