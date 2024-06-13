@@ -28,7 +28,7 @@ const AddProductPageF = () => {
         title: "",
         price: "",
         productImageUrl: "",
-        category: "",
+        category: "vegetables",
         description: "",
         quantity: 1,
         time: Timestamp.now(),
