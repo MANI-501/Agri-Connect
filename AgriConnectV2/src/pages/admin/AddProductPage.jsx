@@ -8,29 +8,11 @@ import Loader from "../../components/loader/Loader";
 
 const categoryList = [
     {
-        name: 'fashion'
+        name: 'vegetables'
     },
     {
-        name: 'shirt'
+        name: 'fruits'
     },
-    {
-        name: 'jacket'
-    },
-    {
-        name: 'mobile'
-    },
-    {
-        name: 'laptop'
-    },
-    {
-        name: 'shoes'
-    },
-    {
-        name: 'home'
-    },
-    {
-        name: 'books'
-    }
 ]
 
 const AddProductPage = () => {

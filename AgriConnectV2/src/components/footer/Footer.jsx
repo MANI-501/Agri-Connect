@@ -53,8 +53,8 @@ const Footer = () => {
                                         <Link to="/" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Home</Link>
                                         <Link to="/about" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>About Us</Link>
                                         <Link to="/services" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Our Services</Link>
-                                        <Link to="/team" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Meet The Team</Link>
-                                        <Link to="/blog" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Latest Blog</Link>
+                                        {/* <Link to="/team" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Meet The Team</Link>
+                                        <Link to="/blog" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Latest Blog</Link> */}
                                         <Link to="/contact" className="text-white"><i className="bi bi-arrow-right text-white me-2"></i>Contact Us</Link>
                                     </div>
                                 </div>
@@ -64,8 +64,8 @@ const Footer = () => {
                                         <Link to="/" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Home</Link>
                                         <Link to="/about" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>About Us</Link>
                                         <Link to="/services" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Our Services</Link>
-                                        <Link to="/team" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Meet The Team</Link>
-                                        <Link to="/blog" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Latest Blog</Link>
+                                        {/* <Link to="/team" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Meet The Team</Link>
+                                        <Link to="/blog" className="text-white mb-2"><i className="bi bi-arrow-right text-white me-2"></i>Latest Blog</Link> */}
                                         <Link to="/contact" className="text-white"><i className="bi bi-arrow-right text-white me-2"></i>Contact Us</Link>
                                     </div>
                                 </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Layout from "../../components/layout/Layout";
 import "./ServicesPage.css";
 import { FaCarrot, FaAppleAlt, FaDog, FaTractor, FaSeedling } from 'react-icons/fa';
@@ -12,8 +13,12 @@ const ServicesPage = () => {
                     <div class="row justify-content-start">
                         <div class="col-lg-8 text-center text-lg-start">
                             <h1 class="display-1 text-white mb-md-4">Our Services</h1>
-                            <a href="" class="btn btn-primary exploreBtn py-md-3 px-md-5 me-3">Home</a>
-                            <a href="" class="btn btn-secondary contactBtn py-md-3 px-md-5">Services</a>
+                            <Link to={"/"} className="btn btn-primary exploreBtn py-md-3 px-md-5 me-3">
+                                Home
+                            </Link>
+                            <Link to={"/services"} className="btn btn-secondary contactBtn py-md-3 px-md-5">
+                                Services
+                            </Link>
                         </div>
                     </div>
                 </div>

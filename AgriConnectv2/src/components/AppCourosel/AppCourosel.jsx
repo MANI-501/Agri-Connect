@@ -4,7 +4,7 @@ import carousel1 from "../../../src/assets/img/carousel-1.jpg";
 import carousel2 from "../../../src/assets/img/carousel-2.jpg";
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Link } from "react-router-dom";
 
 function AppCarousel() {
   return (
@@ -21,12 +21,12 @@ function AppCarousel() {
               <h1 className="text-6xl text-white mb-8 heading">
                 Quality Vegetables For Healthy Life
               </h1>
-              <a href="" class="btn py-4 px-8 me-3 bg-[#ff9933] border border-[#ff9933] text-white font-bold text-[16px] leading-none">
+              <Link to={"/allProduct"} className="btn py-4 px-8 me-3 bg-[#ff9933] border border-[#ff9933] text-white font-bold text-[16px] leading-none">
                 Explore
-              </a>
-              <a href="" class="btn py-4 px-8 bg-[#34ad54] border border-[#34ad54] text-white font-bold text-[16px] leading-none">
+              </Link>
+              <Link to={"/contact"} className="btn py-4 px-8 bg-[#34ad54] border border-[#34ad54] text-white font-bold text-[16px] leading-none">
                 Contact
-              </a>
+              </Link>
             </div>
           </Carousel.Caption>
         </Carousel.Item>

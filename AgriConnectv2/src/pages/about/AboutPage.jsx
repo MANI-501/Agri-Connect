@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import about from "../../assets/img/about.png";
 import "./AboutPage.css";
 import { FaLeaf, FaStar } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const AboutPage = () => {
     return (
@@ -12,8 +13,12 @@ const AboutPage = () => {
                     <div class="row justify-content-start">
                         <div class="col-lg-8 text-center text-lg-start">
                             <h1 class="display-1 text-white mb-md-4">About Us</h1>
-                            <a href="" class="btn btn-primary exploreBtn py-md-3 px-md-5 me-3">Home</a>
-                            <a href="" class="btn btn-secondary contactBtn py-md-3 px-md-5">About Us</a>
+                            <Link to={"/"} className="btn btn-primary exploreBtn py-md-3 px-md-5 me-3">
+                                Home
+                            </Link>
+                            <Link to={"/about"} className="btn btn-secondary contactBtn py-md-3 px-md-5">
+                                About Us
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -36,7 +41,7 @@ const AboutPage = () => {
                                 <div className="flex items-center flex-col text-center">
                                     <div className="mb-4 flex flex-column align-items-center">
                                         <span className="text-secondary text-4xl mb-2">
-                                            <FaLeaf style={{ color: "#34ad54"}} />
+                                            <FaLeaf style={{ color: "#34ad54" }} />
 
                                         </span>
                                         <h4 className="font-bold">100% Assured</h4>
@@ -48,7 +53,7 @@ const AboutPage = () => {
                                 <div className="flex items-center flex-col text-center sm:mt-0">
                                     <div className="mb-4 flex flex-column align-items-center">
                                         <span className="text-secondary text-4xl mb-2">
-                                            <FaStar style={{ color: "#34ad54"}}/>
+                                            <FaStar style={{ color: "#34ad54" }} />
                                         </span>
                                         <h4 className="font-bold">Award Winning</h4>
                                     </div>

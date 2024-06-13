@@ -63,6 +63,10 @@ const Navbar = () => {
                 <Link to={'/admin-dashboard'} className="navItem ms-3">Admin</Link>
             </li>}
 
+            {user?.role === "farmer" && <li>
+                <Link to={'/farmer-dashboard'} className="navItem ms-3">Farmer</Link>
+            </li>}
+
             {/* logout */}
             {user && <li className=" cursor-pointer navItem ms-3 d-flex align-items-center" onClick={logout} >
                 Logout
