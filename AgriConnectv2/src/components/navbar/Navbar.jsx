@@ -67,23 +67,24 @@ const Navbar = () => {
     )
     return (
         <div>
-            <div className="flex align-items-center justif-content-space-between headContainer">
-
-                <div className="flex align-items-center justify-content-center phone">
-                    <i
-                        className={`fa-solid fa-phone-volume phoneIcon me-2`}
-                    ></i>
-                    <span className="phoneNo ps-2">+33 782508109</span>
-                </div>
-
-                <div className="flex align-items-center justify-content-center agriHead">
-                    <Link to={"/"} className="text-decoration-none">
-                        <div className="navbar-brand ms-lg-5">
-                            <span className="header">Agri</span>
-                            <span className="connectText">Connect</span>
+            <div class="container-fluid px-5 hidden lg:block my-2">
+                <div class="row gx-5 py-2 flex items-center">
+                    <div class="col-lg-3">
+                        <div class="flex items-center justify-center">
+                            <i class="fa-solid fa-phone-volume me-2"></i>
+                            <span class="font-bold phoneNo">+33 782508109</span>
                         </div>
-                    </Link>
-
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="flex items-center justify-center">
+                            <a href="/" class="no-underline">
+                                <div class="navbar-brand ms-lg-5">
+                                    <span class=" font-bold header">Agri</span>
+                                    <span class=" connectText">Connect</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <nav className="bg-orange-600 sticky top-0">

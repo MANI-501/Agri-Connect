@@ -1,13 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>AgriConnect - Organic Farm Website</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="AgriConnect" name="keywords" />
+    <meta content="AgriConnect" name="description" />
+    <style>
+      .VIpgJd-ZVi9od-l4eHX-hSRGPd {
+        display: none;
+      }
+      .skiptranslate.goog-te-gadget {
+        font-size: 0; /* Hide all text content */
+      }
+
+      .skiptranslate.goog-te-gadget * {
+        font-size: initial; /* Restore font size for child elements */
+      }
+      #google_translate_element {
+        max-height: 50px;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+      }
+      .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate {
+        display: none;
+      }
+    </style>
   </head>
   <body>
+    <div id="google_translate_element"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
   </body>
 </html>
