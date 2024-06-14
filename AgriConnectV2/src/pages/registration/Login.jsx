@@ -54,6 +54,8 @@ const Login = () => {
                     setLoading(false);
                     if (user.role === "user") {
                         navigate('/user-dashboard');
+                    } else if(user.role === "farmer") {
+                        navigate('/farmer-dashboard');
                     } else {
                         navigate('/admin-dashboard');
                     }

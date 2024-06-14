@@ -8,6 +8,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import toast from "react-hot-toast";
 import Loader from "../../components/loader/Loader";
 import Layout from "../../components/layout/Layout";
+import emailjs from "emailjs-com";
 
 const Signup = () => {
     const context = useContext(myContext);
@@ -89,7 +90,6 @@ const Signup = () => {
 
             // Add User Detail
             await addDoc(userRefrence, user);
-
             // Send Welcome Email
             sendWelcomeEmail(userSignup.email, userSignup.name,userSignup.role);
 
@@ -131,15 +131,13 @@ const Signup = () => {
             message: roleMessage
         };
         // send mail
-        emailjs.sendForm('service_8tkwse5', 'template_99lkfp8', templateParams, 'NTXQlWWBFRnbGMLmD')
+        emailjs.send('service_8tkwse5', 'template_99lkfp8', templateParams, 'NTXQlWWBFRnbGMLmD')
             .then((response) => {
                 toast.success("Message Sent !")
                 console.log('SUCCESS!', response.status, response.text);
             }, (error) => {
                 toast.error("Failed to send message !")
                 console.log('FAILED...', error);
-            }).finally(()=>{
-                setLoading(false);
             });
     };
 
