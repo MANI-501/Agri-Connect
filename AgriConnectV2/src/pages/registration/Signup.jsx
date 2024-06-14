@@ -131,14 +131,13 @@ const Signup = () => {
             message: roleMessage
         };
         // send mail
+        emailjs.send('service_8tkwse5', 'template_99lkfp8', templateParams, 'NTXQlWWBFRnbGMLmD')
             .then((response) => {
                 toast.success("Message Sent !")
                 console.log('SUCCESS!', response.status, response.text);
             }, (error) => {
                 toast.error("Failed to send message !")
                 console.log('FAILED...', error);
-            }).finally(()=>{
-                setLoading(false);
             });
     };
 
