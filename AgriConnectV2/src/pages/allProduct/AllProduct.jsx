@@ -103,7 +103,7 @@ const AllProduct = () => {
                                                         {item.title.substring(0, 25)}
                                                     </h1>
                                                     <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                                                        €{item.price}
+                                                        €{item.price} per {item.quantityP ?? 1} {item.quantityUnit ?? "kg"}
                                                     </h1>
                                                     <div className="flex justify-center">
                                                         {cartItems.some((p) => p.id === item.id) ? (

@@ -54,8 +54,8 @@ const Navbar = () => {
             </li> : ""}
 
             {/* User */}
-            {user?.role === "user" && <li>
-                <Link to={'/user-dashboard'} className="navItem ms-3">User</Link>
+            {user?.role === "customer" && <li>
+                <Link to={'/customer-dashboard'} className="navItem ms-3">Profile</Link>
             </li>}
 
             {/* Admin */}

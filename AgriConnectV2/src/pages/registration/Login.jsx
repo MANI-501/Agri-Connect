@@ -52,8 +52,8 @@ const Login = () => {
                     })
                     toast.success("Login Successfully");
                     setLoading(false);
-                    if (user.role === "user") {
-                        navigate('/user-dashboard');
+                    if (user.role === "customer") {
+                        navigate('/customer-dashboard');
                     } else if(user.role === "farmer") {
                         navigate('/farmer-dashboard');
                     } else {

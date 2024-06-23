@@ -3,7 +3,7 @@ import { Navigate } from "react-router"
 
 export const ProtectedRouteForUser = ({children}) => {
     const user = JSON.parse(localStorage.getItem('users'))
-    if (user?.role === "user") {
+    if (user?.role === "customer") {
       return children
     }
     else {

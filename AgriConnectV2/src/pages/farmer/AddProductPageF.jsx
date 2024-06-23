@@ -30,7 +30,8 @@ const AddProductPageF = () => {
         productImageUrl: "",
         category: "vegetables",
         description: "",
-        quantity: 1,
+        quantityP: 1,
+        quantityUnit: "piece", // New field for quantity unit
         time: Timestamp.now(),
         date: new Date().toLocaleString(
             "en-US",
@@ -45,27 +46,27 @@ const AddProductPageF = () => {
 
     // Add Product Function
     const addProductFunction = async () => {
-        if (product.title == "" || product.price == "" || product.productImageUrl == "" || product.category == "" || product.description == "") {
-            return toast.error("all fields are required")
+        if (product.title === "" || product.price === "" || product.productImageUrl === "" || product.category === "" || product.description === "") {
+            return toast.error("all fields are required");
         }
 
         setLoading(true);
         try {
             const productRef = collection(fireDB, 'products');
-            await addDoc(productRef, product)
+            await addDoc(productRef, product);
             toast.success("Add product successfully");
-            navigate('/farmer-dashboard')
-            setLoading(false)
+            navigate('/admin-dashboard');
+            setLoading(false);
         } catch (error) {
             console.log(error);
-            setLoading(false)
+            setLoading(false);
             toast.error("Add product failed");
         }
-
     }
+
     return (
         <Layout>
-            <div>
+            <div className="mt-4">
                 <div className='flex justify-center items-center' style={{ minHeight: "600px" }}>
                     {loading && <Loader />}
                     {/* Login Form  */}
@@ -88,7 +89,7 @@ const AddProductPageF = () => {
                                     setProduct({
                                         ...product,
                                         title: e.target.value
-                                    })
+                                    });
                                 }}
                                 placeholder='Product Title'
                                 className='bg-orange-50 border text-orange-300 border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-300'
@@ -105,12 +106,47 @@ const AddProductPageF = () => {
                                     setProduct({
                                         ...product,
                                         price: e.target.value
-                                    })
+                                    });
                                 }}
                                 placeholder='Product Price'
                                 className='bg-orange-50 border text-orange-300 border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-300'
                             />
                         </div>
+
+                        {/* Input Six - Quantity */}
+                        <div className="mb-3 flex justify-between items-center">
+                            <span className="text-orange-300 me-2">per</span>
+                            <input
+                                type="number"
+                                name="quantity"
+                                value={product.quantityP}
+                                onChange={(e) => {
+                                    setProduct({
+                                        ...product,
+                                        quantityP: e.target.value
+                                    });
+                                }}
+                                placeholder='Quantity'
+                                className='bg-orange-50 border text-orange-300 border-orange-200 px-2 py-2 w-48 rounded-md outline-none placeholder-orange-300'
+                            />
+                            <select
+                                value={product.quantityUnit}
+                                onChange={(e) => {
+                                    setProduct({
+                                        ...product,
+                                        quantityUnit: e.target.value
+                                    });
+                                }}
+                                className="w-46 px-2 py-2 text-orange-300 bg-orange-50 border border-orange-200 rounded-md outline-none"
+                            >
+                                <option value="piece">piece</option>
+                                <option value="kg">kg</option>
+                                <option value="gram">gram</option>
+                                <option value="litre">litre</option>
+                                <option value="ml">ml</option>
+                            </select>
+                        </div>
+
 
                         {/* Input Three  */}
                         <div className="mb-3">
@@ -122,7 +158,7 @@ const AddProductPageF = () => {
                                     setProduct({
                                         ...product,
                                         productImageUrl: e.target.value
-                                    })
+                                    });
                                 }}
                                 placeholder='Product Image Url'
                                 className='bg-orange-50 border text-orange-300 border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-300'
@@ -137,15 +173,15 @@ const AddProductPageF = () => {
                                     setProduct({
                                         ...product,
                                         category: e.target.value
-                                    })
+                                    });
                                 }}
                                 className="w-full px-1 py-2 text-orange-300 bg-orange-50 border border-orange-200 rounded-md outline-none  ">
                                 <option disabled>Select Product Category</option>
                                 {categoryList.map((value, index) => {
-                                    const { name } = value
+                                    const { name } = value;
                                     return (
                                         <option className=" first-letter:uppercase" key={index} value={name}>{name}</option>
-                                    )
+                                    );
                                 })}
                             </select>
                         </div>
@@ -158,9 +194,8 @@ const AddProductPageF = () => {
                                     setProduct({
                                         ...product,
                                         description: e.target.value
-                                    })
+                                    });
                                 }} name="description" placeholder="Product Description" rows="5" className=" w-full px-2 py-1 text-orange-300 bg-orange-50 border border-orange-200 rounded-md outline-none placeholder-orange-300 ">
-
                             </textarea>
                         </div>
 

@@ -7,7 +7,6 @@ import { fireDB } from "../../firebase/FirebaseConfig";
 import toast from "react-hot-toast";
 
 const ProductDetail = ({role}) => {
-    console
     const context = useContext(myContext);
     const { loading, setLoading, getAllProduct, getAllProductFunction } = context;
     // console.log(getAllProduct)
@@ -55,13 +54,14 @@ const ProductDetail = ({role}) => {
                             <th scope="col" className="h-12 px-6 text-md border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100 font-bold fontPara">Image</th>
                             <th scope="col" className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">Title</th>
                             <th scope="col" className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">Price</th>
+                            <th scope="col" className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">Quantity Unit</th>
                             <th scope="col" className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">Category</th>
                             <th scope="col" className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100"> Date</th>
                             <th scope="col" className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">Action</th>
                             <th scope="col" className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">Action</th>
                         </tr>
                         {getAllProduct.map((item, index) => {
-                            const { id, title, price, category, date, productImageUrl } = item
+                            const { id, title, price, category, date, productImageUrl, quantityP, quantityUnit } = item
                             return (
                                 <tr key={index} className="text-orange-300">
                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 ">
@@ -77,6 +77,9 @@ const ProductDetail = ({role}) => {
                                     </td>
                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
                                         €{price}
+                                    </td>
+                                    <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
+                                        per {quantityP ?? 1 } {quantityUnit ?? "kg"}
                                     </td>
                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
                                         {category}

@@ -23,12 +23,14 @@ const UpdateProductPageF = () => {
     // navigate 
     const navigate = useNavigate();
     const { id } = useParams()
-    console.log(id)
+    // console.log(id)
 
     // product state
     const [product, setProduct] = useState({
         title: "",
         price: "",
+        quantityUnit: "piece", // New field for quantity unit
+        quantityP: 1, // New field for quantity unit
         productImageUrl: "",
         category: "",
         description: "",
@@ -55,9 +57,10 @@ const UpdateProductPageF = () => {
                 productImageUrl: product?.productImageUrl,
                 category: product?.category,
                 description: product?.description,
-                quantity: product?.quantity,
+                quantityP : product?.quantityP,
                 time: product?.time,
-                date: product?.date
+                date: product?.date,
+                quantityUnit: product?.quantityUnit,
             })
         } catch (error) {
             console.log(error);
@@ -73,7 +76,7 @@ const UpdateProductPageF = () => {
             toast.success("Product Updated successfully")
             getAllProductFunction();
             setLoading(false)
-            navigate('/farmer-dashboard')
+            navigate('/admin-dashboard')
 
         } catch (error) {
             console.log(error)
@@ -86,7 +89,7 @@ const UpdateProductPageF = () => {
     }, []);
     return (
         <Layout>
-            <div>
+            <div className="mt-4">
                 <div className='flex justify-center items-center' style={{ minHeight: "600px" }}>
                     {loading && <Loader />}
                     {/* Login Form  */}
@@ -131,6 +134,40 @@ const UpdateProductPageF = () => {
                                 placeholder='Product Price'
                                 className='bg-orange-50 border text-orange-300 border-orange-200 px-2 py-2 w-96 rounded-md outline-none placeholder-orange-300'
                             />
+                        </div>
+
+                        {/* Input Six - Quantity */}
+                        <div className="mb-3 flex justify-between items-center">
+                            <span className="text-orange-300 me-2">per</span>
+                            <input
+                                type="number"
+                                name="quantity"
+                                value={product.quantityP}
+                                onChange={(e) => {
+                                    setProduct({
+                                        ...product,
+                                        quantityP: e.target.value
+                                    });
+                                }}
+                                placeholder='Quantity'
+                                className='bg-orange-50 border text-orange-300 border-orange-200 px-2 py-2 w-48 rounded-md outline-none placeholder-orange-300'
+                            />
+                            <select
+                                value={product.quantityUnit}
+                                onChange={(e) => {
+                                    setProduct({
+                                        ...product,
+                                        quantityUnit: e.target.value
+                                    });
+                                }}
+                                className="w-46 px-2 py-2 text-orange-300 bg-orange-50 border border-orange-200 rounded-md outline-none"
+                            >
+                                <option value="piece">piece</option>
+                                <option value="kg">kg</option>
+                                <option value="gram">gram</option>
+                                <option value="litre">litre</option>
+                                <option value="ml">ml</option>
+                            </select>
                         </div>
 
                         {/* Input Three  */}

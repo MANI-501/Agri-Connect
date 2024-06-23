@@ -79,7 +79,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                     mobileNumber: e.target.value
                                 })
                             }}
-                            placeholder='Enter your mobileNumber'
+                            placeholder='Enter your mobile number'
                             className='bg-orange-50 border border-orange-200 px-2 py-2 w-full rounded-md outline-none text-orange-600 placeholder-orange-300'
                         />
                     </div>

@@ -70,7 +70,7 @@ const UserDashboard = () => {
                                 <div key={index}>
                                     {order.cartItems.map((item, index) => {
                                         // console.log('item', item);
-                                        const { id, date, quantity, price, title, productImageUrl, category } = item
+                                        const { id, date, quantity, price, title, productImageUrl, category, quantityP, quantityUnit } = item
                                         // console.log('order', order)
                                         const { status } = order
                                         return (
@@ -132,7 +132,7 @@ const UserDashboard = () => {
                                                                 </div>
 
                                                                 <div className="ml-auto flex flex-col items-end justify-between">
-                                                                    <p className="text-right text-sm font-bold text-gray-900">€ {price}</p>
+                                                                    <p className="text-right text-sm font-bold text-gray-900">€ {price} per {quantityP ?? 1 } {quantityUnit ?? "kg"}</p>
                                                                 </div>
                                                             </li>
                                                         </ul>

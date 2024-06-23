@@ -112,7 +112,7 @@ const CartPage = () => {
 
                                     <>
                                         {cartItems.map((item, index) => {
-                                            const { id, title, price, productImageUrl, quantity, category } = item
+                                            const { id, title, price, productImageUrl, quantity, category, quantityP, quantityUnit } = item
                                             return (
                                                 <div key={index} className="">
                                                     <li className="flex py-6 sm:py-6 ">
@@ -139,7 +139,7 @@ const CartPage = () => {
                                                                     </div>
                                                                     <div className="mt-1 flex items-end">
                                                                         <p className="text-sm font-medium text-gray-900">
-                                                                            €{price}
+                                                                            €{price} per {quantityP ?? 1} {quantityUnit ?? "kg"}
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -211,7 +211,7 @@ const CartPage = () => {
                                                 addressInfo={addressInfo}
                                                 setAddressInfo={setAddressInfo}
                                                 buyNowFunction={buyNowFunction}
-                                            /> : <Navigate to={'/login'}/>
+                                            /> : <Navigate to={'/login'} />
                                         }
                                     </div>
                                 </div>

@@ -5,12 +5,14 @@ import OrderDetail from '../../components/admin/OrderDetail';
 import UserDetail from '../../components/admin/UserDetail';
 import { useContext } from 'react';
 import myContext from '../../context/myContext';
+import Layout from '../../components/layout/Layout';
 
 const AdminDashboard = () => {
     const user = JSON.parse(localStorage.getItem('users'));
     const context = useContext(myContext);
     const {getAllProduct, getAllOrder, getAllUser} = context;
     return (
+        <Layout>
         <div>
             {/* Top */}
             <div className="top mb-5 px-5 mt-5">
@@ -165,6 +167,7 @@ const AdminDashboard = () => {
                 </div>
             </div>
         </div>
+        </Layout>
     );
 }
 
