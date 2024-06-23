@@ -13,6 +13,7 @@ const AllProduct = () => {
 
     const context = useContext(myContext);
     const { loading, getAllProduct } = context;
+    const user = JSON.parse(localStorage.getItem('users'));
 
     const cartItems = useSelector((state) => state.cart);
     const dispatch = useDispatch();
@@ -56,25 +57,22 @@ const AllProduct = () => {
                                 <h2 className="text-lg font-semibold mb-4">Categories</h2>
                                 <button
                                     onClick={() => setSelectedCategory("all")}
-                                    className={`block text-gray-600 hover:text-gray-800 mb-2 ${
-                                        selectedCategory === "all" ? "font-bold text-gray-800" : ""
-                                    }`}
+                                    className={`block text-gray-600 hover:text-gray-800 mb-2 ${selectedCategory === "all" ? "font-bold text-gray-800" : ""
+                                        }`}
                                 >
                                     All
                                 </button>
                                 <button
                                     onClick={() => setSelectedCategory("vegetables")}
-                                    className={`block text-gray-600 hover:text-gray-800 mb-2 ${
-                                        selectedCategory === "vegetables" ? "font-bold text-gray-800" : ""
-                                    }`}
+                                    className={`block text-gray-600 hover:text-gray-800 mb-2 ${selectedCategory === "vegetables" ? "font-bold text-gray-800" : ""
+                                        }`}
                                 >
                                     Vegetables
                                 </button>
                                 <button
                                     onClick={() => setSelectedCategory("fruits")}
-                                    className={`block text-gray-600 hover:text-gray-800 mb-2 ${
-                                        selectedCategory === "fruits" ? "font-bold text-gray-800" : ""
-                                    }`}
+                                    className={`block text-gray-600 hover:text-gray-800 mb-2 ${selectedCategory === "fruits" ? "font-bold text-gray-800" : ""
+                                        }`}
                                 >
                                     Fruits
                                 </button>
@@ -105,7 +103,7 @@ const AllProduct = () => {
                                                     <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                                                         €{item.price} per {item.quantityP ?? 1} {item.quantityUnit ?? "kg"}
                                                     </h1>
-                                                    <div className="flex justify-center">
+                                                    {(!user || user.role === "customer") && (<div className="flex justify-center">
                                                         {cartItems.some((p) => p.id === item.id) ? (
                                                             <button
                                                                 onClick={() => deleteCart(item)}
@@ -121,7 +119,7 @@ const AllProduct = () => {
                                                                 Add To Cart
                                                             </button>
                                                         )}
-                                                    </div>
+                                                    </div>)}
                                                 </div>
                                             </div>
                                         </div>

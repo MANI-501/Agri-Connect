@@ -30,6 +30,7 @@ const AddProductPage = () => {
         category: "vegetables",
         description: "",
         quantityP: 1,
+        quantity: 1,
         quantityUnit: "piece", // New field for quantity unit
         time: Timestamp.now(),
         date: new Date().toLocaleString(
@@ -141,8 +142,7 @@ const AddProductPage = () => {
                                 <option value="piece">piece</option>
                                 <option value="kg">kg</option>
                                 <option value="gram">gram</option>
-                                <option value="litre">litre</option>
-                                <option value="ml">ml</option>
+                                <option value="dozen">dozen</option>
                             </select>
                         </div>
 

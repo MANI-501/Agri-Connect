@@ -8,9 +8,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import toast from "react-hot-toast";
 import Loader from "../../components/loader/Loader";
 import Layout from "../../components/layout/Layout";
-import emailjs from "emailjs-com";
+import axios from 'axios';
 
 const Signup = () => {
+
     const context = useContext(myContext);
     const { loading, setLoading } = context;
 
@@ -91,7 +92,7 @@ const Signup = () => {
             // Add User Detail
             await addDoc(userRefrence, user);
             // Send Welcome Email
-            sendWelcomeEmail(userSignup.email, userSignup.name,userSignup.role);
+            sendWelcomeEmail(userSignup.email, userSignup.name, userSignup.role);
 
             setUserSignup({
                 name: "",
@@ -118,26 +119,32 @@ const Signup = () => {
      *                        Send Welcome Email Function 
     *========================================================================**/
 
+    // Ensure the frontend sends the correct payload
     const sendWelcomeEmail = (email, name, role) => {
-        const roleMessage = role === "customer" 
-            ? "Welcome to our platform! You have successfully signed up as a customer." 
-            : role === "farmer" 
+        const roleMessage = role === "customer"
+            ? "Welcome to our platform! You have successfully signed up as a customer."
+            : role === "farmer"
                 ? "Welcome to our platform! You have successfully signed up as a farmer."
                 : "Welcome to our platform! You have successfully signed up as an admin.";
 
-        const templateParams = {
-            to_email: email,
-            to_name: name,
-            message: roleMessage
+        const mailOptions = {
+            from: 'msskumargaddam@gail.com', // sender address
+            to: email, // receiver's email
+            subject: 'Welcome to Our Platform', // Subject line
+            text: roleMessage, // Email body (plain text)
+            envelope: {
+                from: 'msskumargaddam@gail.com', // 'Sender Name <sender@example.com>'
+                to: email  // 'Recipient Name <recipient@example.com>'
+            }
+
         };
-        // send mail
-        emailjs.send('service_8tkwse5', 'template_99lkfp8', templateParams, 'NTXQlWWBFRnbGMLmD')
-            .then((response) => {
-                toast.success("Message Sent !")
-                console.log('SUCCESS!', response.status, response.text);
-            }, (error) => {
-                toast.error("Failed to send message !")
-                console.log('FAILED...', error);
+
+        axios.post('http://localhost:5000/api/user/signup', { message: mailOptions })
+            .then(response => {
+                console.log('Email sent:', response.data);
+            })
+            .catch(error => {
+                console.error('Error sending email:', error);
             });
     };
 

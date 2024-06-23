@@ -108,6 +108,7 @@ const UserDashboard = () => {
                                                 {/* right  */}
                                                 <div className="flex-1">
                                                     <div className="p-8">
+                                                        <h1 className="text-lg font-semibold text-black mb-2">Please get this order at {order.selectedHub ?? ""}</h1>
                                                         <ul className="-my-7 divide-y divide-gray-200">
                                                             <li
                                                                 className="flex flex-col justify-between space-x-5 py-7 md:flex-row"

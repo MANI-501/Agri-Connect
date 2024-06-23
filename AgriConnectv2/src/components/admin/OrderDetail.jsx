@@ -69,27 +69,7 @@ const OrderDetail = () => {
 
                                 <th scope="col"
                                     className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">
-                                    Name
-                                </th>
-
-                                <th scope="col"
-                                    className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">
-                                    Address
-                                </th>
-
-                                <th scope="col"
-                                    className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">
-                                    Pincode
-                                </th>
-
-                                <th scope="col"
-                                    className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">
-                                    Phone Number
-                                </th>
-
-                                <th scope="col"
-                                    className="h-12 px-6 text-md font-bold fontPara border-l first:border-l-0 border-orange-100 text-slate-700 bg-slate-100">
-                                    Email
+                                    Selected Hub
                                 </th>
 
                                 <th scope="col"
@@ -152,20 +132,8 @@ const OrderDetail = () => {
                                                         {order.status}
                                                     </td>
 
-                                                    <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        {order.addressInfo.name}
-                                                    </td>
-
-                                                    <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        {order.addressInfo.address}
-                                                    </td>
-
-                                                    <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        {order.addressInfo.pincode}
-                                                    </td>
-
-                                                    <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        {order.addressInfo.mobileNumber}
+                                                    <td className="h-12 px-6 text-md transition duration-300 border-t border-l text-green-600  first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
+                                                        {order.selectedHub}
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-orange-100 stroke-slate-500 text-slate-500 ">
