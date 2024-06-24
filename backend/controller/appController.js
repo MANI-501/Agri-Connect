@@ -66,8 +66,8 @@ const signup = (req, res) => {
 
     let response = {
         body: {
-            name : message.to, // Using recipient's email as name for simplicity
-            intro: "Congratulations! You have successfully registered with AgriConnect.",
+            name : message.name, // Using recipient's email as name for simplicity
+            intro: message.text,
             outro: "Thank you for joining AgriConnect. We look forward to supporting your journey with us."
         }
     }

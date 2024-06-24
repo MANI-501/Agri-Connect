@@ -122,11 +122,11 @@ const Signup = () => {
     // Ensure the frontend sends the correct payload
     const sendWelcomeEmail = (email, name, role) => {
         const roleMessage = role === "customer"
-            ? "Dear " + name + ",\n\nWelcome to AgriConnect! You have successfully registered as a customer. We are excited to have you on board."
+            ? ",\n\nWelcome to AgriConnect! You have successfully registered as a customer. We are excited to have you on board."
             : role === "farmer"
-                ? "Dear " + name + ",\n\nWelcome to AgriConnect! You have successfully registered as a farmer. We look forward to supporting your agricultural needs."
-                : "Dear " + name + ",\n\nWelcome to AgriConnect! You have successfully registered as an admin. We are pleased to have you as part of our team.";
-    
+                ? ",\n\nWelcome to AgriConnect! You have successfully registered as a farmer. We look forward to supporting your agricultural needs."
+                : ",\n\nWelcome to AgriConnect! You have successfully registered as an admin. We are pleased to have you as part of our team.";
+
         const mailOptions = {
             from: 'msskumargaddam@gail.com', // sender address
             to: email, // receiver's email
@@ -135,9 +135,10 @@ const Signup = () => {
             envelope: {
                 from: 'msskumargaddam@gail.com', // 'Sender Name <sender@example.com>'
                 to: email  // 'Recipient Name <recipient@example.com>'
-            }
+            },
+            name: name,
         };
-    
+
         axios.post('http://localhost:5000/api/user/signup', { message: mailOptions })
             .then(response => {
                 console.log('Email sent:', response.data);
@@ -146,7 +147,7 @@ const Signup = () => {
                 console.error('Error sending email:', error);
             });
     };
-    
+
 
     return (
         <Layout>
