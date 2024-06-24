@@ -1,8 +1,6 @@
 const nodemailer = require('nodemailer');
 const Mailgen = require('mailgen');
 
-const { EMAIL, PASSWORD } = require('../env.js')
-
 /** send mail from testing account */
 const signup = async (req, res) => {
 
@@ -51,8 +49,8 @@ const getbill = (req, res) => {
     let config = {
         service : 'gmail',
         auth : {
-            user: EMAIL,
-            pass: PASSWORD
+            user: "msskumargaddam@gmail.com",
+            pass: "eaqt acwq mqpt cdmp"
         }
     }
 
@@ -86,7 +84,7 @@ const getbill = (req, res) => {
     let mail = MailGenerator.generate(response)
 
     let message = {
-        from : EMAIL,
+        from : "msskumargaddam@gmail.com",
         to : userEmail,
         subject: "Place Order",
         html: mail
