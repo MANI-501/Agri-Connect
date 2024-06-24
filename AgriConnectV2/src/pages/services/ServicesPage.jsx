@@ -33,30 +33,35 @@ const ServicesPage = () => {
                             <a href="#" className="btn contactBtn mt-4 py-3 px-5 inline-block">Contact Us</a>
                         </div>
                         <div className="service-item flex flex-column align-items-center bg-gray-100 p-5 rounded-lg text-center">
-                            <FaCarrot className=" text-4xl mb-3" style={{ color: "#34ad54" }} />
+                            <FaCarrot className="text-4xl mb-3" style={{ color: "#34ad54" }} />
                             <h4 className="text-xl font-bold">Fresh Vegetables</h4>
-                            <p className="mt-2">We produce 100% healthy food for everyone. Experience the pure taste of nature with our sustainably grown produce.</p>
+                            <p className="mt-2">Enjoy crisp, nutrient-rich vegetables grown sustainably for your health and vitality.</p>
                         </div>
+
                         <div className="service-item flex flex-column align-items-center bg-gray-100 p-5 rounded-lg text-center">
-                            <FaAppleAlt className=" text-4xl mb-3" style={{ color: "#34ad54" }} />
+                            <FaAppleAlt className="text-4xl mb-3" style={{ color: "#34ad54" }} />
                             <h4 className="text-xl font-bold">Fresh Fruits</h4>
-                            <p className="mt-2">We produce 100% healthy food for everyone. Experience the pure taste of nature with our sustainably grown produce.</p>
+                            <p className="mt-2">Indulge in juicy, naturally sweet fruits picked at peak ripeness for ultimate freshness.</p>
                         </div>
+
                         <div className="service-item flex flex-column align-items-center bg-gray-100 p-5 rounded-lg text-center">
-                            <FaDog className=" text-4xl mb-3" style={{ color: "#34ad54" }} />
+                            <FaDog className="text-4xl mb-3" style={{ color: "#34ad54" }} />
                             <h4 className="text-xl font-bold">Healthy Cattle</h4>
-                            <p className="mt-2">We produce 100% healthy food for everyone. Experience the pure taste of nature with our sustainably grown produce.</p>
+                            <p className="mt-2">Our cattle are raised humanely, providing wholesome, nutrient-dense dairy and meat.</p>
                         </div>
+
                         <div className="service-item flex flex-column align-items-center bg-gray-100 p-5 rounded-lg text-center">
-                            <FaTractor className=" text-4xl mb-3" style={{ color: "#34ad54" }} />
-                            <h4 className="text-xl font-bold">Modern Truck</h4>
-                            <p className="mt-2">We produce 100% healthy food for everyone. Experience the pure taste of nature with our sustainably grown produce.</p>
+                            <FaTractor className="text-4xl mb-3" style={{ color: "#34ad54" }} />
+                            <h4 className="text-xl font-bold">Modern Trucks</h4>
+                            <p className="mt-2">State-of-the-art trucks ensure your fresh produce reaches you in perfect condition.</p>
                         </div>
+
                         <div className="service-item flex flex-column align-items-center bg-gray-100 p-5 rounded-lg text-center">
-                            <FaSeedling className=" text-4xl mb-3" style={{ color: "#34ad54" }} />
+                            <FaSeedling className="text-4xl mb-3" style={{ color: "#34ad54" }} />
                             <h4 className="text-xl font-bold">Farming Plans</h4>
-                            <p className="mt-2">We produce 100% healthy food for everyone. Experience the pure taste of nature with our sustainably grown produce.</p>
+                            <p className="mt-2">Innovative farming plans designed to sustainably nourish both people and the planet.</p>
                         </div>
+
                     </div>
                 </div>
             </div>

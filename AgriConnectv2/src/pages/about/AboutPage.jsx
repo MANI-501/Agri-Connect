@@ -47,7 +47,8 @@ const AboutPage = () => {
                                         <h4 className="font-bold">100% Assured</h4>
                                     </div>
                                     <p className="text-center mb-0">
-                                        We produce 100% Healthy food for everyone. Experience the pure taste of nature with our sustainably grown produce.
+                                        100% healthy, naturally grown produce. Experience the pure taste of nature with our sustainably cultivated foods. Guaranteed quality for your health and well-being.
+
                                     </p>
                                 </div>
                                 <div className="flex items-center flex-col text-center sm:mt-0">
@@ -58,7 +59,7 @@ const AboutPage = () => {
                                         <h4 className="font-bold">Award Winning</h4>
                                     </div>
                                     <p className="text-center mb-0">
-                                        We produce 100% Healthy food for everyone. Experience the pure taste of nature with our sustainably grown produce.
+                                        Award-winning 100% healthy food. Enjoy fresh, flavorful produce grown sustainably and recognized for excellence. Taste the difference with nature’s best.
                                     </p>
                                 </div>
                             </div>
