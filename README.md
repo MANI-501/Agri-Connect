@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Website Url - https://fantastic-creponne-6aea3a.netlify.app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Home Page
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/8b6fd49b-19c2-4868-a9a3-13c03e4d1de9)
 
-## Available Scripts
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/c0f17f5a-6680-4ad2-a611-884ef6d42ef4)
 
-In the project directory, you can run:
+# About Page 
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/00a00755-44c3-459b-b8c5-2d46cae22b8a)
 
-### `npm start`
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/0a46c229-43e6-400f-ac34-d36e1de6e487)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Services Page
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/661a46fd-81f4-4a68-8147-5d8c06ccd886)
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/9b1121fb-4788-4630-baa2-067b05b454b7)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# All Products Page
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/99c20339-5e6f-4150-a91e-ca6d1c44433e)
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/cb8d3eb8-1506-44f9-bd0d-969528fa6dfe)
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/7517dde7-41f7-469d-a98d-d7d7c5329634)
 
-### `npm test`
+# Signup Page
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/6df30e0a-4626-416d-87a3-a448a098b157)
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/70666c2a-6900-443f-8801-b03237409c16)
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/4ca72020-f758-43dd-bc15-e293e6915d7f)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Login Page
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/2b6f828c-51f8-436a-a8f7-0646acdec07a)
 
-### `npm run build`
+# Contact Us Page
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/5a2fe888-458b-4228-a727-e32bfb3409d2)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Admin Dashboard
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/15b0eff5-38a1-4da3-a4e8-7d6736b00688)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Total Products list
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/37fec470-7bc2-4f1c-996a-ee05b401579e)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Total Orders list 
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/469015af-e86d-4e75-8b82-bc21fd31c8bb)
 
-### `npm run eject`
+# Total Users list
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/3542c528-e96a-4ab6-b237-210b8cc93e56)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Update Product
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/5e18ae98-85a9-476d-8ca5-a8f7e69d0fd7)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Add Product
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/fa9bbbd9-a949-4194-ab01-f4534f712e35)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Cart Page
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/718a50b7-0494-484f-ab34-2bed7362bc53)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Customer dashboard
+![image](https://github.com/MANI-501/Agri-Connect/assets/82748874/286b9af9-e25e-41df-bd64-7af0a6eec799)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
